@@ -75,6 +75,8 @@ const WifiSync = {
 
     wss.on('connection', (socket)=>{
       this.handleConnection({socket:socket})
+      const hook = this.APICloud._connectHook
+      if (hook) hook.call(null, this.clientsCount)
     })
 
     server.listen(port, ()=>{

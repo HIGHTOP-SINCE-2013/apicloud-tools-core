@@ -186,7 +186,13 @@ const APICloud = {
       return
     }
   },
+  _connectHook: null,
+  onconnected(callback) {
+    this._connectHook = callback
+  }
 }
+
+WifiSync.APICloud = APICloud
 
 export default APICloud
 
